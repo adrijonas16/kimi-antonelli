@@ -1,0 +1,31 @@
+/* relevo — Mexico podium: two champions carry the new one */
+.relevo{padding-block:14vh 12vh;overflow:hidden}
+.relevo-head{display:grid;grid-template-columns:auto 1fr;gap:18px 40px;align-items:end;margin-bottom:6vh}
+.relevo-head .eyebrow{grid-column:1/-1}
+.relevo-head p{color:var(--mute);line-height:1.6;max-width:420px;justify-self:end}
+.relevo-photo{position:relative;margin-inline:auto;width:min(calc(100% - 2 * var(--gutter)), 128vh);aspect-ratio:3/2;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.relevo-img{position:absolute;inset:-8% 0;background-size:cover;background-position:center 30%;will-change:transform}
+.relevo-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,16,20,.75));pointer-events:none}
+.relevo-tag{position:absolute;z-index:2;padding:12px 16px;border-radius:14px;background:rgba(15,16,20,.72);backdrop-filter:blur(10px);border:1px solid var(--line);min-width:150px}
+.relevo-tag b{font-family:var(--display);font-weight:400;font-size:clamp(28px,3.2vw,48px);line-height:.9;color:var(--ink);display:block}
+.relevo-tag span{display:block;font-family:var(--display);font-size:clamp(16px,1.5vw,22px);text-transform:uppercase;margin-top:6px}
+.relevo-tag small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.relevo-tag::before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px rgba(255,255,255,.12)}
+.t-max{left:4%;bottom:10%;color:#6f8fff}.t-max::before{right:-22px;top:-18px}
+.t-kimi{left:50%;top:5%;transform:translateX(-50%);color:var(--teal);border-color:rgba(63,184,196,.5)}.t-kimi b{color:var(--teal)}.t-kimi::before{left:50%;bottom:-22px;margin-left:-5px}
+.t-lewis{right:4%;bottom:10%;color:#ff4d4d}.t-lewis::before{left:-22px;top:-18px}
+.relevo-count{display:flex;align-items:center;justify-content:center;gap:clamp(18px,4vw,60px);margin-top:7vh;text-align:center}
+.relevo-count div b{font-family:var(--display);font-weight:400;font-size:clamp(56px,8vw,130px);line-height:.9;display:block}
+.relevo-count div span{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.relevo-count i{font-style:normal;font-family:var(--display);font-size:clamp(36px,5vw,80px);color:var(--mute)}
+.relevo-count .kimi b{color:var(--teal)}
+.relevo-count .sum b{color:var(--gold)}
+@media(max-width:760px){
+  .relevo-head{grid-template-columns:1fr}.relevo-head p{justify-self:start}
+  .relevo-photo{aspect-ratio:4/5;width:calc(100% - 36px)}
+  .relevo-img{background-position:center top}
+  .relevo-tag{min-width:0;padding:8px 10px}.relevo-tag small{display:none}
+  .t-max{left:3%;bottom:6%}.t-lewis{right:3%;bottom:6%}
+  .relevo-tag::before{display:none}
+  .relevo-count{gap:10px}.relevo-count div b{font-size:44px}.relevo-count i{font-size:28px}.relevo-count div span{font-size:9px;letter-spacing:.1em}
+}

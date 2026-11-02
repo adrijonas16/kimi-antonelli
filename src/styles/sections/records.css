@@ -1,6 +1,6 @@
 /* records (horizontal) */
 .records{overflow:hidden}
-.records-inner{height:100vh;display:flex;flex-direction:column;justify-content:center}
+.records-inner{height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center}
 .records-head{padding:0 var(--gutter);margin-bottom:5vh;display:flex;justify-content:space-between;align-items:flex-end}
 .records-track{display:flex;gap:24px;padding:0 var(--gutter);width:max-content}
 .rec{width:clamp(280px,30vw,460px);height:clamp(340px,52vh,520px);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,#0f1416,#070909);position:relative;overflow:hidden;flex-shrink:0}

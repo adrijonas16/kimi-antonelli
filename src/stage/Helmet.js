@@ -7,6 +7,24 @@ import { buildVariant, LIVERIES } from './helmetVariants.js';
  * Kimi's helmet (Meshy model). `rig` is moved around by the Director; `body` holds the model
  * and handles spin/tilt. Liveries are swapped by replacing the mesh material.
  */
+/**
+ * The generated model's normal map and mip chain show up as white "cracks" on the visor and paint.
+ * Dropping the normal map and sampling the base level only gives a clean, glossy shell.
+ */
+export function cleanSurface(material) {
+  material.normalMap = null;
+  material.envMapIntensity = 1.6;
+  material.roughness = Math.min(material.roughness ?? 1, .35);
+  for (const key of ['map', 'metalnessMap', 'roughnessMap', 'emissiveMap']) {
+    const t = material[key];
+    if (!t) continue;
+    t.generateMipmaps = false;
+    t.minFilter = THREE.LinearFilter;
+    t.needsUpdate = true;
+  }
+  material.needsUpdate = true;
+}
+
 export class Helmet {
   constructor(scene) {
     this.rig = new THREE.Group();
@@ -27,8 +45,7 @@ export class Helmet {
     model.traverse((o) => {
       if (!o.isMesh) return;
       o.castShadow = true;
-      o.material.envMapIntensity = 1.6;
-      o.material.roughness = Math.min(o.material.roughness ?? 1, .35);
+      cleanSurface(o.material);
       this.meshes.push(o);
     });
     this.base = this.meshes[0].material;

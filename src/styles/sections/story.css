@@ -1,6 +1,6 @@
 /* story (car sequence) */
 .story{height:700vh}
-.story-pin{height:100vh;position:relative;overflow:hidden}
+.story-pin{height:100vh;height:100svh;position:relative;overflow:hidden}
 .chap{position:absolute;left:var(--gutter);bottom:12vh;max-width:620px;opacity:0}
 .chap.right{left:auto;right:var(--gutter);text-align:right}
 .chap.right .eyebrow{justify-content:flex-end}

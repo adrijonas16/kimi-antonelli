@@ -1,6 +1,6 @@
 /* helmet lab */
 .lab{height:420vh}
-.lab-pin{height:100vh;position:relative;display:flex;justify-content:space-between;align-items:center;padding:0 var(--gutter)}
+.lab-pin{height:100vh;height:100svh;position:relative;display:flex;justify-content:space-between;align-items:center;padding:0 var(--gutter)}
 .lab-left{max-width:380px;z-index:2}
 .lab-title{margin:14px 0 3vh;font-size:clamp(44px,5.6vw,92px)!important}
 .liveries{list-style:none;display:flex;flex-direction:column;gap:6px}
@@ -17,12 +17,14 @@
 .lab-name{font-family:var(--display);font-size:clamp(30px,3vw,48px);text-transform:uppercase;margin-top:10px}
 .lab-hint{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:12px}
 @media(max-width:760px){
-  .lab-pin{flex-direction:column;justify-content:space-between;padding:84px 18px 4vh}
+  .lab-pin{flex-direction:column;justify-content:space-between;padding:84px 18px calc(16px + env(safe-area-inset-bottom))}
   .lab-left{max-width:none;width:100%}
   .lab-title{margin:8px 0 0;font-size:40px!important}
-  .liveries{flex-direction:row;overflow-x:auto;gap:8px;position:absolute;left:18px;right:18px;bottom:4vh}
-  .liv{flex-direction:column;align-items:flex-start;gap:6px;min-width:120px;padding:10px 12px;opacity:.6}
-  .liv-t b{font-size:16px}.liv-t em{display:none}
+  .liveries{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;position:absolute;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom))}
+  .liv{min-width:0;flex-direction:column;align-items:center;gap:8px;padding:10px 2px;opacity:.6;text-align:center;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  .liv-n{display:none}
+  .liv-t{width:100%}.liv-t b{font-size:10.5px;line-height:1.1;overflow-wrap:normal;word-break:normal;hyphens:none}.liv-t em{display:none}
+  .liv i{order:-1;width:26px;height:26px}
   .lab-right{position:absolute;right:18px;top:96px;padding:0}
   .lab-big{font-size:80px}.lab-name{font-size:20px}.lab-hint{display:none}
 }

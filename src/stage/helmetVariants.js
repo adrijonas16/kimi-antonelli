@@ -25,7 +25,7 @@ const FINISH = {
 
 function loadTexture(name, like, srgb = true) {
   return loader.loadAsync(`${DIR}${name}.webp`).then((t) => {
-    Object.assign(t, { flipY: like.flipY, wrapS: like.wrapS, wrapT: like.wrapT, anisotropy: 8 });
+    Object.assign(t, { flipY: like.flipY, wrapS: like.wrapS, wrapT: like.wrapT, generateMipmaps: false, minFilter: THREE.LinearFilter });
     if (srgb) t.colorSpace = THREE.SRGBColorSpace;
     return t;
   });

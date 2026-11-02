@@ -6,6 +6,8 @@ import { reducedMotion } from '../config.js';
 import { state } from './state.js';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
+// mobile browsers resize the viewport when the address bar hides; don't recalculate pins for that
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 /** Lenis smooth scroll driven by GSAP's ticker so ScrollTrigger and Lenis stay in sync. */
 export const lenis = new Lenis({ duration: 1.15, smoothWheel: !reducedMotion });

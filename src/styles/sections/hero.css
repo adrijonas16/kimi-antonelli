@@ -1,5 +1,5 @@
 /* hero */
-.hero{height:100vh;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(24px,5vh,56px);overflow:hidden}
+.hero{height:100vh;height:100svh;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(24px,5vh,56px);overflow:hidden}
 .hero-top{position:absolute;top:110px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
 .champ-badge{display:flex;align-items:center;gap:14px;padding:12px 18px 12px 12px;border:1px solid rgba(245,197,66,.45);border-radius:99px;background:rgba(245,197,66,.06);backdrop-filter:blur(8px)}
 .champ-badge .star{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#000;display:grid;place-items:center;font-size:16px}

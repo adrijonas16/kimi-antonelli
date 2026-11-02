@@ -1,6 +1,6 @@
 /* champion reveal */
 .champion{height:220vh}
-.champion-pin{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;overflow:hidden}
+.champion-pin{height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;overflow:hidden}
 .champion .over{font-family:var(--mono);font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
 .champion h2{font-family:var(--display);font-size:clamp(70px,17vw,320px);line-height:.82;text-transform:uppercase;margin:18px 0}
 .champion h2 .gold{background:linear-gradient(180deg,#fff5cf 0%,#f5c542 45%,#9a6b00 100%);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
