@@ -1,0 +1,23 @@
+{
+  "source": "Instagram feed screenshot (measured with design-dna measure-colors, k=8)",
+  "design_system": {
+    "color": {
+      "surface": {"background": "#0f1014"},
+      "neutral": {"scale": ["#d2dfe1", "#a8a6a1", "#36322f", "#0f1014"], "usage": "ice white text on near-black"},
+      "primary": {"hex": "#3f9fb2", "ui_variant": "#3fb8c4", "role": "Mercedes teal accent"},
+      "secondary": {"hex": "#1c5768", "role": "deep petrol for gradients and grading"},
+      "accent": {"hex": "#9f1319", "role": "crimson, red-neon / start lights"},
+      "warm": {"hex": "#846561", "role": "skin and stadium light, warm half of the grade"},
+      "champion": {"hex": "#f5c542", "role": "gold of the World Champion board"},
+      "measured_palette": [
+        {"hex":"#0f1014","coverage":0.4123},{"hex":"#36322f","coverage":0.1933},{"hex":"#1c5768","coverage":0.0968},
+        {"hex":"#846561","coverage":0.0961},{"hex":"#a8a6a1","coverage":0.0745},{"hex":"#d2dfe1","coverage":0.0619},
+        {"hex":"#9f1319","coverage":0.0355},{"hex":"#3f9fb2","coverage":0.0294}]
+    }
+  },
+  "design_style": {
+    "mood": "cinematic night, candid, emotional, celebratory",
+    "imagery": "low-light stadium photography, confetti, close-up helmet portraits, red neon, teal kit",
+    "grade": "teal shadows + warm skin highlights, deep blacks, light grain"
+  }
+}
