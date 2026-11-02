@@ -15,9 +15,10 @@ export const COLORS = {
 };
 
 /** Public asset paths (served from /public). */
+const MODEL_EXT = import.meta.env.VITE_MODEL_EXT || 'glb'; // hosts that refuse .glb can serve the same bytes as .bin
 export const ASSETS = {
-  carModel: 'models/car.glb',
-  helmetModel: 'models/helmet.glb',
+  carModel: `models/car.${MODEL_EXT}`,
+  helmetModel: `models/helmet.${MODEL_EXT}`,
 };
 
 /** Next race for the calendar countdown (approx. 17:00 UTC start). */
