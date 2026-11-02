@@ -1,0 +1,15 @@
+/* records (horizontal) */
+.records{overflow:hidden}
+.records-inner{height:100vh;display:flex;flex-direction:column;justify-content:center}
+.records-head{padding:0 var(--gutter);margin-bottom:5vh;display:flex;justify-content:space-between;align-items:flex-end}
+.records-track{display:flex;gap:24px;padding:0 var(--gutter);width:max-content}
+.rec{width:clamp(280px,30vw,460px);height:clamp(340px,52vh,520px);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,#0f1416,#070909);position:relative;overflow:hidden;flex-shrink:0}
+.rec::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,80%) var(--my,0%),rgba(63,184,196,.18),transparent 55%);opacity:0;transition:opacity .4s}
+.rec:hover::before{opacity:1}
+.rec .idx{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--mute)}
+.rec .big{font-family:var(--display);font-size:clamp(72px,8vw,130px);line-height:.85;color:var(--teal)}
+.rec .big small{font-size:.35em;color:var(--ink);display:block;margin-top:8px}
+.rec h3{font-family:var(--display);font-weight:400;font-size:clamp(26px,2.4vw,38px);text-transform:uppercase;line-height:1}
+.rec p{color:var(--mute);font-size:14px;line-height:1.5;margin-top:10px}
+.rec.gold .big{color:var(--gold)}
+.rec.gold{border-color:rgba(245,197,66,.35)}

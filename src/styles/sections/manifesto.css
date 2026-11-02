@@ -1,0 +1,8 @@
+/* manifesto */
+.manifesto{padding:22vh var(--gutter) 18vh}
+.manifesto{min-height:110vh}
+.manifesto p{position:relative;z-index:2;font-family:var(--display);font-size:clamp(34px,5.6vw,96px);line-height:1;text-transform:uppercase;max-width:15ch;margin-top:30px}
+.manifesto p .w{opacity:.12;display:inline-block;margin-right:.22em}
+.manifesto p .k{color:var(--teal)}
+.manifesto p .g{color:var(--gold)}
+.manifesto .sign{font-family:'Caveat',cursive;font-size:clamp(40px,5vw,72px);color:var(--teal);margin-top:40px;transform:rotate(-6deg);display:inline-block}

@@ -1,0 +1,10 @@
+/* loader: lights out */
+.loader{position:fixed;inset:0;z-index:150;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:42px}
+.lights{display:flex;gap:clamp(10px,2.4vw,26px);padding:22px 28px;background:#111;border-radius:14px;box-shadow:0 0 0 1px #222 inset}
+.light-col{display:flex;flex-direction:column;gap:10px;padding:10px;background:#050505;border-radius:10px}
+.light{width:clamp(30px,5vw,56px);aspect-ratio:1;border-radius:50%;background:#2a0b0b;box-shadow:inset 0 -4px 8px rgba(0,0,0,.6)}
+.light.on{background:radial-gradient(circle at 40% 35%,#ff8a8a,#ff1e1e 45%,#a00 100%);box-shadow:0 0 30px 6px rgba(255,30,30,.7),inset 0 -4px 8px rgba(0,0,0,.4)}
+.loader-txt{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase;text-align:center}
+.loader-go{font-family:var(--display);font-size:clamp(40px,9vw,140px);text-transform:uppercase;line-height:.9;color:var(--ink);position:absolute;opacity:0;text-align:center}
+.loader-go span{color:var(--teal)}
+.loader-pct{position:absolute;bottom:30px;right:36px;font-family:var(--display);font-size:clamp(50px,8vw,110px);color:#1a1a1a}

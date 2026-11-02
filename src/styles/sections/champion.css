@@ -1,0 +1,11 @@
+/* champion reveal */
+.champion{height:220vh}
+.champion-pin{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;overflow:hidden}
+.champion .over{font-family:var(--mono);font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
+.champion h2{font-family:var(--display);font-size:clamp(70px,17vw,320px);line-height:.82;text-transform:uppercase;margin:18px 0}
+.champion h2 .gold{background:linear-gradient(180deg,#fff5cf 0%,#f5c542 45%,#9a6b00 100%);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
+.champion .meta{display:flex;gap:clamp(20px,5vw,80px);justify-content:center;flex-wrap:wrap;margin-top:20px}
+.champion .meta div{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.champion .meta b{display:block;font-family:var(--display);font-size:clamp(34px,4vw,60px);color:var(--ink);font-weight:400;letter-spacing:0}
+.champion .quote{margin-top:50px;font-family:'Caveat',cursive;font-size:clamp(28px,3.2vw,48px);color:var(--teal)}
+.champion .quote small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--mute);text-transform:uppercase;margin-top:6px}

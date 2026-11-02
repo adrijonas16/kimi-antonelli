@@ -1,0 +1,11 @@
+/* Reset + base elements */
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+html.lenis,html.lenis body{height:auto}
+html,body{overflow-x:clip;max-width:100%}
+body{overflow-x:hidden;cursor:none}
+main,footer,section{max-width:100vw}
+body.loading{overflow:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--teal);color:#000}
+@media (hover:none){body{cursor:auto}.cursor,.cursor-dot{display:none}}

@@ -1,0 +1,18 @@
+/* season wins */
+.season{padding-block:16vh}
+.season-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:8vh}
+.season-head p{color:var(--mute);line-height:1.6;max-width:460px;justify-self:end}
+@media(max-width:860px){.season-head{grid-template-columns:1fr}.season-head p{justify-self:start}}
+.wins{border-top:1px solid var(--line)}
+.win{display:grid;grid-template-columns:70px 1.2fr 2fr 140px;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.win::before{content:"";position:absolute;inset:0;background:var(--teal);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
+.win:hover::before{transform:scaleY(1)}
+.win:hover{color:#000}
+.win:hover .w-note,.win:hover .w-r{color:#000}
+.w-r{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.w-gp{font-family:var(--display);font-size:clamp(30px,3.6vw,58px);text-transform:uppercase;line-height:1}
+.w-note{color:var(--mute);font-size:14px;line-height:1.45}
+.w-pos{font-family:var(--display);font-size:clamp(30px,3.6vw,58px);text-align:right}
+.win.title .w-pos{color:var(--gold)}
+.win.title::before{background:var(--gold)}
+@media(max-width:760px){.win{grid-template-columns:50px 1fr 70px}.w-note{grid-column:2/4;grid-row:2}}

@@ -1,0 +1,9 @@
+/* footer */
+footer{padding-block:16vh 30px;overflow:hidden;position:relative;z-index:1;background:var(--bg)}
+.f-big{font-family:var(--display);font-size:clamp(120px,31vw,560px);line-height:.78;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.25);white-space:nowrap;text-align:center;position:relative}
+.f-big span{display:inline-block}
+.f-sign{font-family:'Caveat',cursive;color:var(--teal);font-size:clamp(50px,8vw,130px);position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-8deg);-webkit-text-stroke:0;white-space:nowrap}
+.f-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-top:8vh;font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute)}
+.f-row .tag{font-family:var(--display);font-size:clamp(30px,3.4vw,52px);color:var(--ink);letter-spacing:0;text-transform:uppercase}
+.disclaimer{margin-top:30px;font-size:11px;color:#5d6662;line-height:1.6;max-width:760px}
+.mag{display:inline-block}

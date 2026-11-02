@@ -1,5 +1,8 @@
-/* Kimi fan tribute — translations. Keys are the Spanish text nodes. [English, Italiano] */
-window.I18N = {
+/**
+ * Translations. Keys are the Spanish source strings (text nodes in index.html or
+ * strings rendered from data). Values are [English, Italiano].
+ */
+export const DICT = {
   "Warming up the tyres": ["Warming up the tyres", "Gomme in temperatura"],
   "Lights out": ["Lights out", "Lights out"],
   "and away we go": ["and away we go", "and away we go"],
@@ -157,16 +160,18 @@ window.I18N = {
   "Espejo total, edición especial": ["Full mirror, special edition", "Specchio totale, edizione speciale"],
   /* moments + misc generated in JS */
   "El toro de Austin": ["The Austin bull", "Il toro di Austin"],
-  "Noche en Singapur": ["Singapore night", "Notte a Singapore"],
-  "Podio · Singapur 2026": ["Podium · Singapore 2026", "Podio · Singapore 2026"],
+  "Trofeo en Bahréin": ["Bahrain silverware", "Trofeo in Bahrein"],
+  "Podio · Sakhir 2026": ["Podium · Sakhir 2026", "Podio · Sakhir 2026"],
   "Sonrisa de campeón": ["A champion's smile", "Sorriso da campione"],
   "Garaje · Ciudad de México": ["Garage · Mexico City", "Box · Città del Messico"],
   "71 vueltas": ["71 laps", "71 giri"],
   "Champagne en Texas": ["Champagne in Texas", "Champagne in Texas"],
   "¡Hoy!": ["Today!", "Oggi!"]
 };
-/* whole-element overrides (mixed markup) */
-window.I18N_HTML = {
+/* whole-element overrides (mixed markup) */;
+
+/** Elements whose mixed markup is replaced wholesale: selector → [English, Italiano]. */
+export const HTML_OVERRIDES = {
   "#manifesto": [
     'A kid from <span class="k">Bologna</span> who dreamed of Senna. Two seasons later, the youngest <span class="g">champion</span> <span class="k">Formula 1</span> has ever seen. Italy waited 73 years. It was worth it.',
     'Un ragazzo di <span class="k">Bologna</span> che sognava Senna. Due stagioni dopo, il <span class="g">campione</span> più giovane che la <span class="k">Formula 1</span> abbia mai visto. L\'Italia ha aspettato 73 anni. Ne è valsa la pena.'
@@ -174,18 +179,7 @@ window.I18N_HTML = {
   "#ch4 h3": ['Cha<em>mpi</em>on', 'Cam<em>pio</em>ne'],
   "#ch1 h3": ['Helmet<br>on', 'Casco<br>allacciato'],
   ".disclaimer": [
-    'Unofficial fan site made as a tribute. Not affiliated with Andrea Kimi Antonelli, Mercedes-AMG Petronas F1 Team, Formula 1 or the FIA. The 3D helmets are original designs inspired by his colours, not replicas. Car 3D model: «Petronas Mercedes F1 Car» by 24oppongnevaeh on Meshy (CC0). Photos: Kimi Antonelli\'s Instagram; rights belong to their authors.',
-    'Sito fan non ufficiale fatto come tributo. Nessuna affiliazione con Andrea Kimi Antonelli, Mercedes-AMG Petronas F1 Team, Formula 1 o la FIA. I caschi 3D sono design originali ispirati ai suoi colori, non repliche. Modello 3D della monoposto: «Petronas Mercedes F1 Car» di 24oppongnevaeh su Meshy (CC0). Foto: Instagram di Kimi Antonelli; i diritti appartengono ai rispettivi autori.'
+    'Unofficial fan site made as a tribute. Not affiliated with Andrea Kimi Antonelli, Mercedes-AMG Petronas F1 Team, Formula 1 or the FIA. Car 3D model: «Petronas Mercedes F1 Car» by 24oppongnevaeh on Meshy (CC0). 3D helmet generated with Meshy and inspired by his colours; not an official replica. Photos: Kimi Antonelli\'s Instagram; rights belong to their authors.',
+    'Sito fan non ufficiale fatto come tributo. Nessuna affiliazione con Andrea Kimi Antonelli, Mercedes-AMG Petronas F1 Team, Formula 1 o la FIA. Modello 3D della monoposto: «Petronas Mercedes F1 Car» di 24oppongnevaeh su Meshy (CC0). Casco 3D generato con Meshy e ispirato ai suoi colori; non è una replica ufficiale. Foto: Instagram di Kimi Antonelli; i diritti appartengono ai rispettivi autori.'
   ],
-  ".stats-head p": null
-};
-window.applyI18N = function(lang){
-  document.documentElement.lang = lang;
-  if(lang === 'es') return;
-  const idx = lang === 'en' ? 0 : 1;
-  for(const [sel, v] of Object.entries(window.I18N_HTML)){ if(!v) continue; document.querySelectorAll(sel).forEach(el => el.innerHTML = v[idx]); }
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentElement && !/SCRIPT|STYLE/.test(n.parentElement.tagName) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT });
-  const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
-  for(const n of nodes){ const t = n.nodeValue.trim(); const tr = window.I18N[t]; if(tr) n.nodeValue = n.nodeValue.replace(t, tr[idx]); }
-  document.querySelectorAll('[data-t]').forEach(a => { const tr = window.I18N[a.dataset.t]; if(tr) a.dataset.t = tr[idx]; });
 };

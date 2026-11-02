@@ -1,0 +1,65 @@
+/* responsive */
+@media (max-width:760px){
+  nav{padding:16px 20px}
+  :root{--gutter:22px}
+  .logo{font-size:22px}.logo i{display:none}
+  .nav-cta{font-size:9px;padding:8px 12px}
+  .hero-top{top:76px;flex-direction:column;gap:14px}
+  .next-race{text-align:left}.next-race b{font-size:24px}
+  .champ-badge{padding:8px 14px 8px 8px}.champ-badge .star{width:26px;height:26px;font-size:12px}
+  .hero{min-height:560px}
+  .hero h1 .l1,.hero h1 .l2{font-size:19vw}
+  .hero-num{font-size:70vw;right:-4vw;top:42%}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:16px}
+  .scroll-cue .bar{height:36px}
+  .marquee-track{font-size:26px}
+  .manifesto{padding:14vh 18px 10vh}
+  .stats-head{margin-bottom:5vh}
+  .stat{padding:26px 14px 22px 0}
+  .stat .n{font-size:64px}
+  .story-bar{top:64px}
+  .hud{top:76px;right:18px;gap:14px}.hud .blk b{font-size:30px}.hud .drs{font-size:9px;padding:4px 7px}
+  .mini-lights{top:20vh;gap:10px}
+  .chap{bottom:7vh;left:18px;right:18px;max-width:none}
+  .chap.right{right:18px;left:18px}
+  .chap h3{font-size:clamp(46px,14vw,80px)}
+  .chap p{font-size:13px}
+  .chap.center{white-space:normal;width:92vw}
+  .chap.center h3{font-size:22vw}
+  .champion h2{font-size:15.5vw}
+  .champion .meta{gap:18px 26px}.champion .meta b{font-size:30px}
+  .champion .quote{margin-top:26px;font-size:26px}
+  .records-head{margin-bottom:3vh}
+  .rec{width:78vw;height:56vh;padding:22px}
+  .season{padding-block:10vh}
+  .w-gp{font-size:30px}
+  .lab{padding-bottom:5vh}
+  .lab-ui{flex-direction:column;align-items:flex-start}
+  .liveries{gap:8px}.liv{padding:10px 12px;font-size:9px}
+  .tl-line{left:62px}.tl-item{grid-template-columns:62px 1fr;gap:20px;padding-bottom:6vh}
+  .tl-year{font-size:24px;padding-right:12px}.tl-year::after{top:10px;right:-6px}
+  .tl-body h3{font-size:26px}.tl-body p{font-size:14px}
+  .feed{padding:10vh 0 6vh}.feed-row figure{width:42vw}.feed-rows{gap:10px}.feed-row{gap:10px}
+  .cal-card{min-height:170px;padding:18px}.cal-card .d{font-size:48px}.cal-card h4{font-size:22px}
+  .f-row{flex-direction:column;align-items:flex-start}
+  .lightbox img{max-width:94vw}
+}
+
+@media (max-width:760px){
+  .nav-cta{display:none}
+  .lang button{padding:8px 9px}
+  .h-l{font-size:10.4vw!important;word-break:keep-all;overflow-wrap:normal}
+  .lab-title{font-size:9vw!important}
+  .hero h1 .l1,.hero h1 .l2{font-size:17.5vw}
+  .pf-stage{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px;align-items:start}
+  .pf-img{grid-column:1/-1;height:62vh;width:100%;max-width:none;justify-self:center}
+  .pf-sign{bottom:auto;top:calc(62vh - 70px);width:86vw}
+  .pf-chip{position:relative;left:auto!important;right:auto!important;top:auto!important;min-width:0}
+  .pf-chip span{display:block;font-size:11px}
+  .pf-glow{top:10vh;bottom:auto}
+  .pf-num{top:2vh;font-size:90vw}
+  .partners-track{gap:40px}
+  .champion .meta div{min-width:38%}
+}
+
+@media (max-width:420px){ .champ-badge div{font-size:9px} .stat .n{font-size:54px} }

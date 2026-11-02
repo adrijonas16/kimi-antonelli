@@ -1,0 +1,27 @@
+/* Style entry — order matters: tokens → base → components → sections → responsive overrides */
+@import './tokens.css';
+@import './base.css';
+
+@import './components/canvas.css';
+@import './components/cursor.css';
+@import './components/loader.css';
+@import './components/nav.css';
+@import './components/generic.css';
+@import './components/marquee.css';
+
+@import './sections/hero.css';
+@import './sections/manifesto.css';
+@import './sections/story.css';
+@import './sections/champion.css';
+@import './sections/stats.css';
+@import './sections/profile.css';
+@import './sections/records.css';
+@import './sections/season.css';
+@import './sections/lab.css';
+@import './sections/journey.css';
+@import './sections/moments.css';
+@import './sections/feed.css';
+@import './sections/calendar.css';
+@import './sections/footer.css';
+
+@import './responsive.css';

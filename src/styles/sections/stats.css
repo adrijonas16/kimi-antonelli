@@ -1,0 +1,13 @@
+/* stats */
+.stats{padding-block:14vh}
+.stats-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:8vh}
+.stats-head p{max-width:420px;color:var(--mute);line-height:1.6}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.stat{padding:38px 24px 34px 0;border-bottom:1px solid var(--line);position:relative}
+.stat + .stat{padding-left:24px;border-left:1px solid var(--line)}
+.stat .n{font-family:var(--display);font-size:clamp(80px,10vw,180px);line-height:.9;display:block}
+.stat .n sup{font-size:.35em;color:var(--teal);vertical-align:top;margin-left:4px}
+.stat .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:12px;display:block}
+.stat .bar{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--teal);transform-origin:left;transform:scaleX(0)}
+.stat:nth-child(4n+1){padding-left:0;border-left:0}
+@media(max-width:900px){.stat-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(odd){padding-left:0;border-left:0}.stat:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}}

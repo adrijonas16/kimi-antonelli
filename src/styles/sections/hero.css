@@ -1,0 +1,22 @@
+/* hero */
+.hero{height:100vh;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(24px,5vh,56px);overflow:hidden}
+.hero-top{position:absolute;top:110px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.champ-badge{display:flex;align-items:center;gap:14px;padding:12px 18px 12px 12px;border:1px solid rgba(245,197,66,.45);border-radius:99px;background:rgba(245,197,66,.06);backdrop-filter:blur(8px)}
+.champ-badge .star{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#000;display:grid;place-items:center;font-size:16px}
+.champ-badge div{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;line-height:1.5}
+.champ-badge strong{color:var(--gold);font-weight:700}
+.next-race{text-align:right;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);line-height:1.8}
+.next-race b{display:block;color:var(--ink);font-family:var(--display);font-size:32px;letter-spacing:0;font-weight:400}
+.hero-num{position:absolute;right:clamp(10px,3vw,40px);top:50%;transform:translateY(-50%);font-family:var(--display);font-size:clamp(200px,38vw,640px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(63,184,196,.22);pointer-events:none;z-index:-1}
+.hero h1{font-family:var(--display);text-transform:uppercase;line-height:.8;font-weight:400}
+.hero h1 .l1{display:block;font-size:clamp(70px,15vw,270px);color:var(--ink)}
+.hero h1 .l2{display:block;font-size:clamp(70px,15vw,270px);color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:26px;gap:20px;flex-wrap:wrap}
+.hero-sub{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;line-height:1.9;color:var(--mute)}
+.hero-sub b{color:var(--ink);font-weight:400}
+.scroll-cue{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;display:flex;align-items:center;gap:14px}
+.scroll-cue .bar{width:1px;height:56px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.scroll-cue .bar::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--teal);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
+
+.champion-pin .ch-photo{position:absolute;inset:0;z-index:-1}

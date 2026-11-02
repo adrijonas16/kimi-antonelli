@@ -1,0 +1,11 @@
+/* canvas + grain */
+#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#plates{position:fixed;inset:0;z-index:-1;pointer-events:none;will-change:transform,filter}
+#plates div{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0}
+#plates::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(15,16,20,.85) 100%)}
+.grade{position:fixed;inset:0;z-index:89;pointer-events:none;mix-blend-mode:soft-light;opacity:.1;background:radial-gradient(ellipse at 15% 10%,#1c5768,transparent 55%),radial-gradient(ellipse at 85% 95%,#846561,transparent 55%)}
+.red-flood{position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 15%,rgba(159,19,25,.75),rgba(159,19,25,.15) 45%,transparent 75%);mix-blend-mode:screen}
+.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,5%)}80%{transform:translate(6%,2%)}100%{transform:translate(0,0)}}

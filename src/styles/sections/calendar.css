@@ -1,0 +1,13 @@
+/* calendar */
+.cal{padding-block:12vh}
+.cal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6vh}
+@media(max-width:860px){.cal-row{grid-template-columns:repeat(2,1fr)}}
+.cal-card{border:1px solid var(--line);border-radius:18px;padding:24px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .4s var(--ease),border-color .4s}
+.cal-card:hover{transform:translateY(-8px);border-color:var(--teal)}
+.cal-card .d{font-family:var(--display);font-size:64px;line-height:.9}
+.cal-card .d small{font-size:.4em;color:var(--mute);margin-left:6px}
+.cal-card h4{font-family:var(--display);font-weight:400;font-size:28px;text-transform:uppercase}
+.cal-card p{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.cal-card.next{background:var(--teal);color:#000;border-color:var(--teal)}
+.cal-card.next p,.cal-card.next .d small{color:#000}
+.countdown{font-family:var(--mono);font-size:12px;letter-spacing:.15em;margin-top:8px}

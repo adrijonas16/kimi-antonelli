@@ -1,0 +1,7 @@
+/* marquee */
+.marquee-band{position:relative;z-index:3;overflow:hidden;padding:64px 0;background:var(--bg)}
+.marquee{width:112vw;margin-left:-6vw;background:var(--teal);color:#000;padding:18px 0;overflow:hidden;transform:rotate(-2deg);box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.marquee.alt{background:var(--gold);transform:rotate(1.5deg)}
+.marquee-track{display:flex;width:max-content;font-family:var(--display);font-size:clamp(28px,4vw,56px);text-transform:uppercase;white-space:nowrap}
+.marquee-track span{padding:0 28px;display:flex;align-items:center;gap:28px}
+.marquee-track span::after{content:"✦";font-size:.6em}

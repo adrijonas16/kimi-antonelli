@@ -1,0 +1,28 @@
+/* helmet lab */
+.lab{height:420vh}
+.lab-pin{height:100vh;position:relative;display:flex;justify-content:space-between;align-items:center;padding:0 var(--gutter)}
+.lab-left{max-width:380px;z-index:2}
+.lab-title{margin:14px 0 3vh;font-size:clamp(44px,5.6vw,92px)!important}
+.liveries{list-style:none;display:flex;flex-direction:column;gap:6px}
+.liv{display:flex;align-items:center;gap:16px;padding:14px 16px;border:1px solid transparent;border-radius:14px;cursor:none;transition:background .35s,border-color .35s,opacity .35s;opacity:.45}
+.liv:hover{opacity:.8}
+.liv.active{opacity:1;border-color:var(--line);background:rgba(255,255,255,.04)}
+.liv-n{font-family:var(--mono);font-size:11px;color:var(--teal)}
+.liv-t{flex:1}
+.liv-t b{display:block;font-family:var(--display);font-weight:400;font-size:24px;text-transform:uppercase;line-height:1}
+.liv-t em{display:block;font-style:normal;font-size:12px;color:var(--mute);margin-top:4px}
+.liv i{width:22px;height:22px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 2px rgba(255,255,255,.08)}
+.lab-right{text-align:right;align-self:flex-end;padding-bottom:9vh;z-index:2}
+.lab-big{font-family:var(--display);font-size:clamp(120px,16vw,260px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(230,238,240,.35)}
+.lab-name{font-family:var(--display);font-size:clamp(30px,3vw,48px);text-transform:uppercase;margin-top:10px}
+.lab-hint{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:12px}
+@media(max-width:760px){
+  .lab-pin{flex-direction:column;justify-content:space-between;padding:84px 18px 4vh}
+  .lab-left{max-width:none;width:100%}
+  .lab-title{margin:8px 0 0;font-size:40px!important}
+  .liveries{flex-direction:row;overflow-x:auto;gap:8px;position:absolute;left:18px;right:18px;bottom:4vh}
+  .liv{flex-direction:column;align-items:flex-start;gap:6px;min-width:120px;padding:10px 12px;opacity:.6}
+  .liv-t b{font-size:16px}.liv-t em{display:none}
+  .lab-right{position:absolute;right:18px;top:96px;padding:0}
+  .lab-big{font-size:80px}.lab-name{font-size:20px}.lab-hint{display:none}
+}
