@@ -2,6 +2,8 @@
 
 export const isTouch = matchMedia('(hover: none)').matches;
 export const isSmall = innerWidth < 760;
+/** Desktop/iOS Safari: slower compositor for blend modes, filters and big WebGL buffers. */
+export const isSafari = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(navigator.userAgent);
 export const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /** Brand colours as numbers for three.js (mirror of styles/tokens.css). */

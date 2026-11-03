@@ -4,7 +4,7 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { COLORS, isSmall } from '../config.js';
+import { COLORS, isSmall, isSafari } from '../config.js';
 
 /**
  * Renderer, scene, camera, lights and post-processing — the "theatre" every 3D object lives in.
@@ -13,7 +13,7 @@ import { COLORS, isSmall } from '../config.js';
 export class Stage {
   constructor(canvas) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, premultipliedAlpha: false, powerPreference: 'high-performance' });
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio, isSmall ? 1.5 : 1.75));
+    this.renderer.setPixelRatio(Math.min(devicePixelRatio, isSafari ? 1.25 : isSmall ? 1.5 : 1.75));
     this.renderer.setSize(innerWidth, innerHeight);
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = .9;
@@ -30,7 +30,7 @@ export class Stage {
 
     this.key = new THREE.DirectionalLight(0xffffff, 2.2);
     this.key.position.set(3, 9, 5);
-    const map = isSmall ? 1024 : 2048;
+    const map = isSmall || isSafari ? 1024 : 2048;
     this.key.shadow.mapSize.set(map, map);
     Object.assign(this.key.shadow.camera, { left: -5, right: 5, top: 4, bottom: -4, near: 1, far: 30 });
     this.key.shadow.bias = -.0004;
@@ -44,17 +44,26 @@ export class Stage {
     this.bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), .4, .5, .9);
     this.composer.addPass(this.bloom);
     this.composer.addPass(new OutputPass());
+    this.fitBloom();
 
     addEventListener('resize', () => this.resize());
   }
 
   get maxAnisotropy() { return this.renderer.capabilities.getMaxAnisotropy(); }
 
+  /** Safari: bloom at half resolution (it's a soft glow; the difference is invisible). */
+  fitBloom() {
+    if (!isSafari) return;
+    const pr = this.renderer.getPixelRatio() * .5;
+    this.bloom.setSize(innerWidth * pr, innerHeight * pr);
+  }
+
   resize() {
     this.camera.aspect = innerWidth / innerHeight;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(innerWidth, innerHeight);
     this.composer.setSize(innerWidth, innerHeight);
+    this.fitBloom();
   }
 
   /** Bloom can't keep the canvas transparent, so it's skipped while a photo plate is visible. */

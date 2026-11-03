@@ -1,4 +1,5 @@
 import { gsap } from '../core/scroll.js';
+import { pauseOffscreen } from '../core/offscreen.js';
 import { FEED_ROWS } from '../data/content.js';
 
 const tile = (src) => (src.endsWith('.mp4')
@@ -25,7 +26,7 @@ export function initFeed() {
   document.querySelectorAll('.feed-row').forEach((row, i) => {
     const dir = Number(row.dataset.dir);
     if (dir < 0) gsap.set(row, { xPercent: -50 });
-    gsap.to(row, { xPercent: dir > 0 ? -50 : 0, duration: 60 + i * 8, ease: 'none', repeat: -1 });
+    pauseOffscreen(row, gsap.to(row, { xPercent: dir > 0 ? -50 : 0, duration: 60 + i * 8, ease: 'none', repeat: -1 }));
     gsap.fromTo(row, { x: dir * 120 }, { x: -dir * 120, ease: 'none', scrollTrigger: { trigger: '#redes', start: 'top bottom', end: 'bottom top', scrub: true } });
   });
 }

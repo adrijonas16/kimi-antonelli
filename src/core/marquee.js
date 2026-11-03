@@ -1,4 +1,5 @@
 import { gsap, ScrollTrigger } from './scroll.js';
+import { pauseOffscreen } from './offscreen.js';
 
 /** Infinite marquees that speed up with scroll velocity. `data-dir="1|-1"` sets direction. */
 export function initMarquees() {
@@ -7,6 +8,7 @@ export function initMarquees() {
     const dir = Number(m.dataset.dir);
     if (dir < 0) gsap.set(track, { xPercent: -50 });
     const tween = gsap.to(track, { xPercent: dir > 0 ? -50 : 0, repeat: -1, duration: 22, ease: 'none' });
+    pauseOffscreen(m, tween);
     ScrollTrigger.create({
       trigger: m, start: 'top bottom', end: 'bottom top',
       onUpdate: (s) => {

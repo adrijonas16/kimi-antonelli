@@ -1,10 +1,10 @@
 import * as THREE from 'three';
-import { COLORS, isSmall } from '../config.js';
+import { COLORS, isSmall, isSafari } from '../config.js';
 
 /** Warp-speed light streaks flying toward the camera (or along the track in the car sequence). */
 export class Streaks {
   constructor(scene) {
-    this.count = isSmall ? 500 : 1400;
+    this.count = isSmall ? 500 : isSafari ? 900 : 1400;
     this.positions = new Float32Array(this.count * 6);
     this.items = Array.from({ length: this.count }, () => {
       const r = 2.5 + Math.random() * 14, a = Math.random() * Math.PI * 2;

@@ -3,6 +3,9 @@
  * Boot order: render data-driven DOM → translate → build the 3D scene → wire sections → intro.
  */
 import './styles/index.css';
+import { isSafari } from './config.js';
+
+if (isSafari) document.documentElement.classList.add('is-safari');
 import { ScrollTrigger, initAnchors } from './core/scroll.js';
 import { initCursor } from './core/cursor.js';
 import { initMarquees } from './core/marquee.js';
